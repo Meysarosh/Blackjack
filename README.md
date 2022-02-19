@@ -1,2 +1,3 @@
 # Blackjack
-Blackjack  on JavaScript
+
+Blackjack card game on JavaScript.
