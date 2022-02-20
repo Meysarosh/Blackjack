@@ -8,5 +8,87 @@
     <script defer type="module" src="script/control.js"></script>
     <title>Blackjack</title>
   </head>
-  <body></body>
+  <body>
+    <div class="table">
+      <div class="card">
+        <div class="card-back"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-front">
+          <div class="card-front__value card-front__value--red">
+            <div class="card-front__value__symbol">A</div>
+            <svg class="card-front__value__icon--heart">
+              <use xlink:href="img/symbol.svg#icon-heart"></use>
+            </svg>
+          </div>
+          <div
+            class="card-front__value card-front__value--red card-front__value--bottom"
+          >
+            <div class="card-front__value__symbol">A</div>
+            <svg class="card-front__value__icon--heart">
+              <use xlink:href="img/symbol.svg#icon-heart"></use>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-front">
+          <div class="card-front__value card-front__value--black">
+            <div class="card-front__value__symbol">K</div>
+            <svg class="card-front__value__icon">
+              <use xlink:href="img/symbol.svg#icon-spades"></use>
+            </svg>
+          </div>
+          <div
+            class="card-front__value card-front__value--black card-front__value--bottom"
+          >
+            <div class="card-front__value__symbol">K</div>
+            <svg class="card-front__value__icon">
+              <use xlink:href="img/symbol.svg#icon-spades"></use>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-front">
+          <div class="card-front__value card-front__value--red">
+            <div class="card-front__value__symbol">10</div>
+            <svg class="card-front__value__icon">
+              <use xlink:href="img/symbol.svg#icon-diamonds"></use>
+            </svg>
+          </div>
+          <div
+            class="card-front__value card-front__value--red card-front__value--bottom"
+          >
+            <div class="card-front__value__symbol">10</div>
+            <svg class="card-front__value__icon">
+              <use xlink:href="img/symbol.svg#icon-diamonds"></use>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-front">
+          <div class="card-front__value card-front__value--black">
+            <div class="card-front__value__symbol">4</div>
+            <svg class="card-front__value__icon">
+              <use xlink:href="img/symbol.svg#icon-clubs"></use>
+            </svg>
+          </div>
+          <div
+            class="card-front__value card-front__value--black card-front__value--bottom"
+          >
+            <div class="card-front__value__symbol">4</div>
+            <svg class="card-front__value__icon">
+              <use xlink:href="img/symbol.svg#icon-clubs"></use>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

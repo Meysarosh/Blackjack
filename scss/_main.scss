@@ -1,4 +1,10 @@
-$mc: green;
+$black: rgb(0, 0, 0);
+$green: rgb(11, 70, 25);
+$greenl: rgb(17, 101, 48);
+$yellow: rgb(255, 204, 29);
+$grey: rgb(232, 232, 204);
+$red: rgb(255, 0, 0);
+$redd: rgb(149, 1, 1);
 
 *,
 *::after,
@@ -13,8 +19,21 @@ html {
 }
 
 body {
-  font-family: "Courier New", Courier, monospace;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-feature-settings: "lnum";
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.7;
+}
+.table {
+  //temporary
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(rgba($green, 0.75), rgba($green, 0.75)),
+    url("../img/background.jpg");
+  padding: 4rem;
 }

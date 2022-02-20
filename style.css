@@ -10,7 +10,62 @@ html {
   box-sizing: border-box; }
 
 body {
-  font-family: "Courier New", Courier, monospace;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-feature-settings: "lnum";
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.7; }
+
+.table {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(rgba(11, 70, 25, 0.75), rgba(11, 70, 25, 0.75)), url("../img/background.jpg");
+  padding: 4rem; }
+
+.card {
+  height: 23.5rem;
+  width: 16.5rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: #e8e8cc; }
+  .card-back {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(#950101, #950101), url("../img/card-backside.jpg");
+    background-size: 14.5rem 21.5rem;
+    background-blend-mode: screen; }
+  .card-front {
+    width: 100%;
+    height: 100%;
+    position: relative; }
+    .card-front__value {
+      position: absolute;
+      width: 3.5rem;
+      height: 6.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      .card-front__value--red {
+        color: red;
+        fill: red; }
+      .card-front__value--black {
+        color: black;
+        fill: black; }
+      .card-front__value--bottom {
+        transform: rotate(180deg);
+        right: 0;
+        bottom: 0; }
+      .card-front__value__symbol {
+        font-size: 3.5rem;
+        line-height: 3.5rem;
+        fill: inherit; }
+      .card-front__value__icon {
+        width: 3rem;
+        height: 3rem;
+        color: inherit; }
+        .card-front__value__icon--heart {
+          width: 2.5rem;
+          height: 2.5rem; }
