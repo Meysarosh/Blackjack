@@ -1,0 +1,22 @@
+{
+  "name": "blackjack",
+  "version": "1.0.0",
+  "description": "Blackjack card game on JavaScript.",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass scss/import.scss style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Meysarosh/Blackjack.git"
+  },
+  "author": "Meysarosh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Meysarosh/Blackjack/issues"
+  },
+  "homepage": "https://github.com/Meysarosh/Blackjack#readme",
+  "devDependencies": {
+    "node-sass": "^7.0.1"
+  }
+}
