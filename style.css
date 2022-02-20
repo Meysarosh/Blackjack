@@ -6,7 +6,7 @@
   box-sizing: inherit; }
 
 html {
-  font-size: 62.5%;
+  font-size: 50%;
   box-sizing: border-box; }
 
 body {
@@ -26,46 +26,59 @@ body {
   padding: 4rem; }
 
 .card {
+  perspective: 70rem;
   height: 23.5rem;
   width: 16.5rem;
-  padding: 1rem;
-  border-radius: 1rem;
-  background-color: #e8e8cc; }
-  .card-back {
+  position: relative; }
+  .card--visible .card__side--back {
+    transform: rotateY(-180deg); }
+  .card--visible .card__side--front {
+    transform: rotateY(0deg); }
+  .card--hidden .card__side--back {
+    transform: rotateY(0deg); }
+  .card--hidden .card__side--front {
+    transform: rotateY(180deg); }
+  .card__side {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: #e8e8cc;
+    box-shadow: 0.5rem 0.5rem 1rem black;
+    transition: all 0.8s ease;
+    backface-visibility: hidden; }
+  .card__backside-img {
     width: 100%;
     height: 100%;
     background-image: linear-gradient(#950101, #950101), url("../img/card-backside.jpg");
     background-size: 14.5rem 21.5rem;
     background-blend-mode: screen; }
-  .card-front {
-    width: 100%;
-    height: 100%;
-    position: relative; }
-    .card-front__value {
-      position: absolute;
-      width: 3.5rem;
-      height: 6.5rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center; }
-      .card-front__value--red {
-        color: red;
-        fill: red; }
-      .card-front__value--black {
-        color: black;
-        fill: black; }
-      .card-front__value--bottom {
-        transform: rotate(180deg);
-        right: 0;
-        bottom: 0; }
-      .card-front__value__symbol {
-        font-size: 3.5rem;
-        line-height: 3.5rem;
-        fill: inherit; }
-      .card-front__value__icon {
-        width: 3rem;
-        height: 3rem;
-        color: inherit; }
-        .card-front__value__icon--heart {
-          width: 2.5rem;
-          height: 2.5rem; }
+  .card__value {
+    position: absolute;
+    width: 3.5rem;
+    height: 6.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .card__value--red {
+      color: red;
+      fill: red; }
+    .card__value--black {
+      color: black;
+      fill: black; }
+    .card__value--bottom {
+      transform: rotate(180deg);
+      right: 1rem;
+      bottom: 1rem; }
+    .card__value__symbol {
+      font-size: 3.5rem;
+      line-height: 3.5rem;
+      fill: inherit; }
+    .card__value__icon {
+      width: 3rem;
+      height: 3rem;
+      color: inherit; }
+      .card__value__icon--heart {
+        width: 2.5rem;
+        height: 2.5rem; }

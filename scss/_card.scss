@@ -1,11 +1,39 @@
 .card {
+  perspective: 70rem;
   height: 23.5rem;
   width: 16.5rem;
-  padding: 1rem;
-  border-radius: 1rem;
-  background-color: $grey;
+  position: relative;
 
-  &-back {
+  &--visible &__side {
+    &--back {
+      transform: rotateY(-180deg);
+    }
+    &--front {
+      transform: rotateY(0deg);
+    }
+  }
+  &--hidden &__side {
+    &--back {
+      transform: rotateY(0deg);
+    }
+    &--front {
+      transform: rotateY(180deg);
+    }
+  }
+
+  &__side {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: $grey;
+    box-shadow: 0.5rem 0.5rem 1rem $black;
+    transition: all 0.8s ease;
+    backface-visibility: hidden;
+  }
+
+  &__backside-img {
     width: 100%;
     height: 100%;
     background-image: linear-gradient(rgba($redd, 1), rgba($redd, 1)),
@@ -13,45 +41,41 @@
     background-size: 14.5rem 21.5rem;
     background-blend-mode: screen;
   }
-  &-front {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    &__value {
-      position: absolute;
-      width: 3.5rem;
-      height: 6.5rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
 
-      &--red {
-        color: $red;
-        fill: $red;
-      }
-      &--black {
-        color: $black;
-        fill: $black;
-      }
-      &--bottom {
-        transform: rotate(180deg);
-        right: 0;
-        bottom: 0;
-      }
+  &__value {
+    position: absolute;
+    width: 3.5rem;
+    height: 6.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-      &__symbol {
-        font-size: 3.5rem;
-        line-height: 3.5rem;
-        fill: inherit;
-      }
-      &__icon {
-        width: 3rem;
-        height: 3rem;
-        color: inherit;
-        &--heart {
-          width: 2.5rem;
-          height: 2.5rem;
-        }
+    &--red {
+      color: $red;
+      fill: $red;
+    }
+    &--black {
+      color: $black;
+      fill: $black;
+    }
+    &--bottom {
+      transform: rotate(180deg);
+      right: 1rem;
+      bottom: 1rem;
+    }
+
+    &__symbol {
+      font-size: 3.5rem;
+      line-height: 3.5rem;
+      fill: inherit;
+    }
+    &__icon {
+      width: 3rem;
+      height: 3rem;
+      color: inherit;
+      &--heart {
+        width: 2.5rem;
+        height: 2.5rem;
       }
     }
   }
