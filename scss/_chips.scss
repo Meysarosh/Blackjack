@@ -4,6 +4,7 @@
   border-radius: 50%;
   font-size: 3rem;
   border: 0.5rem dashed $grey;
+  box-shadow: 0.5rem 0.5rem 0.5rem $black;
   color: $grey;
   cursor: pointer;
   display: flex;
@@ -13,7 +14,7 @@
     width: 8.65rem;
     height: 8.65rem;
     border-radius: 50%;
-    border: 0.75rem solid black;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -27,7 +28,35 @@
     border-radius: 50%;
     border: 1px dashed $grey;
   }
-  &--black {
+  &--500 {
+    background-image: linear-gradient($yellow, $yellowd);
+  }
+  &--500 &__circle {
+    border: 0.75rem solid $yellowd;
+  }
+
+  &--100 {
     background-image: linear-gradient(rgb(38, 38, 38), black);
+  }
+  &--100 &__circle {
+    border: 0.75rem solid black;
+  }
+  &--25 {
+    background-image: linear-gradient($red, $redd);
+  }
+  &--25 &__circle {
+    border: 0.75rem solid $redd;
+  }
+  &--5 {
+    background-image: linear-gradient($blue, $blued);
+  }
+  &--5 &__circle {
+    border: 0.75rem solid $blued;
+  }
+  &--1 {
+    background-image: linear-gradient($greenl, $green);
+  }
+  &--1 &__circle {
+    border: 0.75rem solid $green;
   }
 }

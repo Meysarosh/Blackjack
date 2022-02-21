@@ -92,17 +92,28 @@ body {
   width: 15rem;
   height: 6rem;
   font-size: 3rem;
+  padding: 0 1rem;
   color: #e8e8cc;
+  fill: #e8e8cc;
   text-transform: uppercase;
   background-image: linear-gradient(#116530, #0b4619);
   border-radius: 0.5rem;
-  border: 0.2rem solid #ffcc1d;
+  border: 0.2rem solid #e8e8cc;
   box-shadow: 0.4rem 0.8rem 1rem rgba(255, 204, 29, 0.25);
   transition: all 0.2s;
-  cursor: pointer; }
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .btn__icon {
+    height: 3rem;
+    width: 3rem;
+    fill: inherit; }
   .btn:hover {
     transform: scale(0.95);
     box-shadow: 0.4rem 1rem 4rem rgba(255, 204, 29, 0.25);
+    border: 0.2rem solid #ffcc1d;
+    fill: #ffcc1d;
     color: #ffcc1d; }
   .btn:active {
     transform: scale(0.95) translateY(0.3rem); }
@@ -116,7 +127,10 @@ body {
     box-shadow: 0.4rem 0.8rem 1rem rgba(255, 204, 29, 0.25); }
   50% {
     transform: scale(0.95);
-    box-shadow: 0 1rem 4rem rgba(255, 204, 29, 0.25); }
+    box-shadow: 0 1rem 4rem rgba(255, 204, 29, 0.25);
+    border: 0.2rem solid #ffcc1d;
+    fill: #ffcc1d;
+    color: #ffcc1d; }
   100% {
     transform: scale(1);
     box-shadow: 0.4rem 0.8rem 1rem rgba(255, 204, 29, 0.25); } }
@@ -127,6 +141,7 @@ body {
   border-radius: 50%;
   font-size: 3rem;
   border: 0.5rem dashed #e8e8cc;
+  box-shadow: 0.5rem 0.5rem 0.5rem black;
   color: #e8e8cc;
   cursor: pointer;
   display: flex;
@@ -136,7 +151,6 @@ body {
     width: 8.65rem;
     height: 8.65rem;
     border-radius: 50%;
-    border: 0.75rem solid black;
     display: flex;
     align-items: center;
     justify-content: center; }
@@ -148,5 +162,23 @@ body {
     height: 7.15rem;
     border-radius: 50%;
     border: 1px dashed #e8e8cc; }
-  .chip--black {
+  .chip--500 {
+    background-image: linear-gradient(#ffcc1d, #d09f00); }
+  .chip--500 .chip__circle {
+    border: 0.75rem solid #d09f00; }
+  .chip--100 {
     background-image: linear-gradient(#262626, black); }
+  .chip--100 .chip__circle {
+    border: 0.75rem solid black; }
+  .chip--25 {
+    background-image: linear-gradient(red, #950101); }
+  .chip--25 .chip__circle {
+    border: 0.75rem solid #950101; }
+  .chip--5 {
+    background-image: linear-gradient(blue, #0000aa); }
+  .chip--5 .chip__circle {
+    border: 0.75rem solid #0000aa; }
+  .chip--1 {
+    background-image: linear-gradient(#116530, #0b4619); }
+  .chip--1 .chip__circle {
+    border: 0.75rem solid #0b4619; }

@@ -2,18 +2,31 @@
   width: 15rem;
   height: 6rem;
   font-size: 3rem;
+  padding: 0 1rem;
   color: $grey;
+  fill: $grey;
   text-transform: uppercase;
   background-image: linear-gradient($greenl, $green);
   border-radius: 0.5rem;
-  border: 0.2rem solid $yellow;
+  border: 0.2rem solid $grey;
   box-shadow: 0.4rem 0.8rem 1rem rgba($yellow, 0.25);
   transition: all 0.2s;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__icon {
+    height: 3rem;
+    width: 3rem;
+    fill: inherit;
+  }
 
   &:hover {
     transform: scale(0.95);
     box-shadow: 0.4rem 1rem 4rem rgba($yellow, 0.25);
+    border: 0.2rem solid $yellow;
+    fill: $yellow;
     color: $yellow;
   }
   &:active {
@@ -32,6 +45,9 @@
       50% {
         transform: scale(0.95);
         box-shadow: 0 1rem 4rem rgba($yellow, 0.25);
+        border: 0.2rem solid $yellow;
+        fill: $yellow;
+        color: $yellow;
       }
       100% {
         transform: scale(1);

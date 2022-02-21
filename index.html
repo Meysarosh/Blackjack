@@ -10,13 +10,55 @@
   </head>
   <body>
     <div class="table">
-      <div class="chip chip--black">
+      <div class="chip chip--500">
+        <div class="chip__circle">
+          <div class="chip__midle">500</div>
+        </div>
+      </div>
+
+      <div class="chip chip--100">
         <div class="chip__circle">
           <div class="chip__midle">100</div>
         </div>
       </div>
 
-      <button class="btn btn--animated">play</button>
+      <div class="chip chip--25">
+        <div class="chip__circle">
+          <div class="chip__midle">25</div>
+        </div>
+      </div>
+
+      <div class="chip chip--5">
+        <div class="chip__circle">
+          <div class="chip__midle">5</div>
+        </div>
+      </div>
+
+      <div class="chip chip--1">
+        <div class="chip__circle">
+          <div class="chip__midle">1</div>
+        </div>
+      </div>
+
+      <button class="btn btn--animated play">play</button>
+      <button class="btn hit">
+        hit
+        <svg class="btn__icon">
+          <use xlink:href="img/symbol.svg#icon-note_add"></use>
+        </svg>
+      </button>
+      <button class="btn stand">
+        stand
+        <svg class="btn__icon">
+          <use xlink:href="img/symbol.svg#icon-pan_tool"></use>
+        </svg>
+      </button>
+      <button class="btn split">
+        split
+        <svg class="btn__icon">
+          <use xlink:href="img/symbol.svg#icon-alt_route"></use>
+        </svg>
+      </button>
 
       <div class="card card--hidden">
         <div class="card__side card__side--back">
