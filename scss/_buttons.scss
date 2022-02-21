@@ -1,0 +1,42 @@
+.btn {
+  width: 15rem;
+  height: 6rem;
+  font-size: 3rem;
+  color: $grey;
+  text-transform: uppercase;
+  background-image: linear-gradient($greenl, $green);
+  border-radius: 0.5rem;
+  border: 0.2rem solid $yellow;
+  box-shadow: 0.4rem 0.8rem 1rem rgba($yellow, 0.25);
+  transition: all 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(0.95);
+    box-shadow: 0.4rem 1rem 4rem rgba($yellow, 0.25);
+    color: $yellow;
+  }
+  &:active {
+    transform: scale(0.95) translateY(0.3rem);
+  }
+
+  &--animated {
+    outline: none;
+    animation: pulsate 1s 5;
+
+    @keyframes pulsate {
+      0% {
+        transform: scale(1);
+        box-shadow: 0.4rem 0.8rem 1rem rgba($yellow, 0.25);
+      }
+      50% {
+        transform: scale(0.95);
+        box-shadow: 0 1rem 4rem rgba($yellow, 0.25);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0.4rem 0.8rem 1rem rgba($yellow, 0.25);
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.chip {
+  width: 9.65rem;
+  height: 9.65rem;
+  border-radius: 50%;
+  font-size: 3rem;
+  border: 0.5rem dashed $grey;
+  color: $grey;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__circle {
+    width: 8.65rem;
+    height: 8.65rem;
+    border-radius: 50%;
+    border: 0.75rem solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__midle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 7.15rem;
+    height: 7.15rem;
+    border-radius: 50%;
+    border: 1px dashed $grey;
+  }
+  &--black {
+    background-image: linear-gradient(rgb(38, 38, 38), black);
+  }
+}
