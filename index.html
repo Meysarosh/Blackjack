@@ -9,135 +9,331 @@
     <title>Blackjack</title>
   </head>
   <body>
-    <div class="table">
-      <div class="chip chip--500">
-        <div class="chip__circle">
-          <div class="chip__midle">500</div>
-        </div>
-      </div>
-
-      <div class="chip chip--100">
-        <div class="chip__circle">
-          <div class="chip__midle">100</div>
-        </div>
-      </div>
-
-      <div class="chip chip--25">
-        <div class="chip__circle">
-          <div class="chip__midle">25</div>
-        </div>
-      </div>
-
-      <div class="chip chip--5">
-        <div class="chip__circle">
-          <div class="chip__midle">5</div>
-        </div>
-      </div>
-
-      <div class="chip chip--1">
-        <div class="chip__circle">
-          <div class="chip__midle">1</div>
-        </div>
-      </div>
-
-      <button class="btn btn--animated play">play</button>
-      <button class="btn hit">
-        hit
-        <svg class="btn__icon">
-          <use xlink:href="img/symbol.svg#icon-note_add"></use>
-        </svg>
-      </button>
-      <button class="btn stand">
-        stand
-        <svg class="btn__icon">
-          <use xlink:href="img/symbol.svg#icon-pan_tool"></use>
-        </svg>
-      </button>
-      <button class="btn split">
-        split
-        <svg class="btn__icon">
-          <use xlink:href="img/symbol.svg#icon-alt_route"></use>
-        </svg>
-      </button>
-
-      <div class="card card--hidden">
-        <div class="card__side card__side--back">
-          <div class="card__backside-img"></div>
-        </div>
-        <div class="card__side card__side--front">
-          <div class="card__value card__value--red">
-            <div class="card__value__symbol">A</div>
-            <svg class="card__value__icon--heart">
-              <use xlink:href="img/symbol.svg#icon-heart"></use>
-            </svg>
+    <div class="content">
+      <div class="table">
+        <div class="dealer-score">10</div>
+        <div class="player-score active-score">14</div>
+        <div class="bet--chip">
+          <div class="chip chip--100">
+            <div class="chip__circle">
+              <div class="chip__midle">100</div>
+            </div>
           </div>
-          <div class="card__value card__value--red card__value--bottom">
-            <div class="card__value__symbol">A</div>
-            <svg class="card__value__icon--heart">
-              <use xlink:href="img/symbol.svg#icon-heart"></use>
-            </svg>
+          <div
+            class="chip chip--100"
+            style="transform: rotateX(45deg) translateY(-1.5rem)"
+          >
+            <div class="chip__circle">
+              <div class="chip__midle">100</div>
+            </div>
+          </div>
+          <div
+            class="chip chip--25"
+            style="transform: rotateX(45deg) translateY(-3rem)"
+          >
+            <div class="chip__circle">
+              <div class="chip__midle">25</div>
+            </div>
+          </div>
+          <div
+            class="chip chip--5"
+            style="transform: rotateX(45deg) translateY(-4.5rem)"
+          >
+            <div class="chip__circle">
+              <div class="chip__midle">5</div>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="card card--visible">
-        <div class="card__side card__side--back">
-          <div class="card__backside-img"></div>
-        </div>
-        <div class="card__side card__side--front">
-          <div class="card__value card__value--black">
-            <div class="card__value__symbol">K</div>
-            <svg class="card__value__icon">
-              <use xlink:href="img/symbol.svg#icon-spades"></use>
-            </svg>
-          </div>
-          <div class="card__value card__value--black card__value--bottom">
-            <div class="card__value__symbol">K</div>
-            <svg class="card__value__icon">
-              <use xlink:href="img/symbol.svg#icon-spades"></use>
-            </svg>
-          </div>
-        </div>
-      </div>
+        <div class="bet--info">Your Bet: 230</div>
 
-      <div class="card card--hidden" id="10diamonds">
-        <div class="card__side card__side--back">
-          <div class="card__backside-img"></div>
+        <div class="bank">
+          <span class="bank__info">Your Bank: 1000</span>
+          <svg class="bank__icon">
+            <use xlink:href="img/symbol.svg#icon-attach_money"></use>
+          </svg>
         </div>
-        <div class="card__side card__side--front">
-          <div class="card__value card__value--red">
-            <div class="card__value__symbol">10</div>
-            <svg class="card__value__icon">
-              <use xlink:href="img/symbol.svg#icon-diamonds"></use>
-            </svg>
-          </div>
-          <div class="card__value card__value--red card__value--bottom">
-            <div class="card__value__symbol">10</div>
-            <svg class="card__value__icon">
-              <use xlink:href="img/symbol.svg#icon-diamonds"></use>
-            </svg>
-          </div>
-        </div>
-      </div>
 
-      <div class="card card--hidden card--top" id="4clubs">
-        <div class="card__side card__side--back">
-          <div class="card__backside-img"></div>
+        <div class="deal-container">
+          <button class="btn btn--animated deal">deal</button>
         </div>
-        <div class="card__side card__side--front">
-          <div class="card__value card__value--black">
-            <div class="card__value__symbol">4</div>
-            <svg class="card__value__icon">
-              <use xlink:href="img/symbol.svg#icon-clubs"></use>
-            </svg>
+
+        <div class="deck-container">
+          <div
+            class="card deck"
+            style="transform: rotateZ(-270deg) translate(0.5rem, -0.5rem)"
+          >
+            <div class="card__side card__side--back">
+              <div class="card__backside-img"></div>
+            </div>
           </div>
-          <div class="card__value card__value--black card__value--bottom">
-            <div class="card__value__symbol">4</div>
-            <svg class="card__value__icon">
-              <use xlink:href="img/symbol.svg#icon-clubs"></use>
-            </svg>
+          <div
+            class="card deck"
+            style="transform: rotateZ(-270deg) translate(0.25rem, -0.25rem)"
+          >
+            <div class="card__side card__side--back">
+              <div class="card__backside-img"></div>
+            </div>
+          </div>
+          <div class="card deck">
+            <div class="card__side card__side--back">
+              <div class="card__backside-img"></div>
+            </div>
           </div>
         </div>
+
+        <div class="card card--hidden dealer-card--1" id="Aheart">
+          <div class="card__side card__side--back">
+            <div class="card__backside-img"></div>
+          </div>
+          <div class="card__side card__side--front">
+            <div class="card__value card__value--red">
+              <div class="card__value__symbol">A</div>
+              <svg class="card__value__icon--heart">
+                <use xlink:href="img/symbol.svg#icon-heart"></use>
+              </svg>
+            </div>
+            <div class="card__value card__value--red card__value--bottom">
+              <div class="card__value__symbol">A</div>
+              <svg class="card__value__icon--heart">
+                <use xlink:href="img/symbol.svg#icon-heart"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="card card--hidden dealer-card--2" id="Kspades">
+          <div class="card__side card__side--back">
+            <div class="card__backside-img"></div>
+          </div>
+          <div class="card__side card__side--front">
+            <div class="card__value card__value--black">
+              <div class="card__value__symbol">K</div>
+              <svg class="card__value__icon">
+                <use xlink:href="img/symbol.svg#icon-spades"></use>
+              </svg>
+            </div>
+            <div class="card__value card__value--black card__value--bottom">
+              <div class="card__value__symbol">K</div>
+              <svg class="card__value__icon">
+                <use xlink:href="img/symbol.svg#icon-spades"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="card card--hidden card--top player-card--1" id="10diamonds">
+          <div class="card__side card__side--back">
+            <div class="card__backside-img"></div>
+          </div>
+          <div class="card__side card__side--front">
+            <div class="card__value card__value--red">
+              <div class="card__value__symbol">10</div>
+              <svg class="card__value__icon">
+                <use xlink:href="img/symbol.svg#icon-diamonds"></use>
+              </svg>
+            </div>
+            <div class="card__value card__value--red card__value--bottom">
+              <div class="card__value__symbol">10</div>
+              <svg class="card__value__icon">
+                <use xlink:href="img/symbol.svg#icon-diamonds"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="card card--hidden player-card--2" id="4clubs">
+          <div class="card__side card__side--back">
+            <div class="card__backside-img"></div>
+          </div>
+          <div class="card__side card__side--front">
+            <div class="card__value card__value--black">
+              <div class="card__value__symbol">4</div>
+              <svg class="card__value__icon">
+                <use xlink:href="img/symbol.svg#icon-clubs"></use>
+              </svg>
+            </div>
+            <div class="card__value card__value--black card__value--bottom">
+              <div class="card__value__symbol">4</div>
+              <svg class="card__value__icon">
+                <use xlink:href="img/symbol.svg#icon-clubs"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="chip-container--500">
+          <div class="chip chip--500">
+            <div class="chip__circle">
+              <div class="chip__midle">500</div>
+            </div>
+          </div>
+        </div>
+        <div class="chip-container--100">
+          <div class="chip chip--100">
+            <div class="chip__circle">
+              <div class="chip__midle">100</div>
+            </div>
+          </div>
+        </div>
+        <div class="chip-container--25">
+          <div class="chip chip--25">
+            <div class="chip__circle">
+              <div class="chip__midle">25</div>
+            </div>
+          </div>
+        </div>
+        <div class="chip-container--5">
+          <div class="chip chip--5">
+            <div class="chip__circle">
+              <div class="chip__midle">5</div>
+            </div>
+          </div>
+        </div>
+        <div class="chip-container--1">
+          <div class="chip chip--1">
+            <div class="chip__circle">
+              <div class="chip__midle">1</div>
+            </div>
+          </div>
+        </div>
+        <!--CHIP TEMPLATE 
+            <div class="chip chip--500">
+          <div class="chip__circle">
+            <div class="chip__midle">500</div>
+          </div>
+        </div>
+
+        <div class="chip chip--100">
+          <div class="chip__circle">
+            <div class="chip__midle">100</div>
+          </div>
+        </div>
+
+        <div class="chip chip--25">
+          <div class="chip__circle">
+            <div class="chip__midle">25</div>
+          </div>
+        </div>
+
+        <div class="chip chip--5">
+          <div class="chip__circle">
+            <div class="chip__midle">5</div>
+          </div>
+        </div>
+
+        <div class="chip chip--1">
+          <div class="chip__circle">
+            <div class="chip__midle">1</div>
+          </div>
+        </div> -->
+
+        <!--BUTTONS TEMPLATE 
+            <button class="btn btn--animated play">play</button>
+
+            <button class="btn btn--animated deal">deal</button>
+
+        <button class="btn hit">
+          hit
+          <svg class="btn__icon">
+            <use xlink:href="img/symbol.svg#icon-note_add"></use>
+          </svg>
+        </button>
+
+        <button class="btn stand">
+          stand
+          <svg class="btn__icon">
+            <use xlink:href="img/symbol.svg#icon-pan_tool"></use>
+          </svg>
+        </button>
+
+        <button class="btn split">
+          split
+          <svg class="btn__icon">
+            <use xlink:href="img/symbol.svg#icon-alt_route"></use>
+          </svg>
+        </button> -->
+
+        <!--CARDS TEMPLATE 
+            <div class="card card--hidden">
+          <div class="card__side card__side--back">
+            <div class="card__backside-img"></div>
+          </div>
+          <div class="card__side card__side--front">
+            <div class="card__value card__value--red">
+              <div class="card__value__symbol">A</div>
+              <svg class="card__value__icon--heart">
+                <use xlink:href="img/symbol.svg#icon-heart"></use>
+              </svg>
+            </div>
+            <div class="card__value card__value--red card__value--bottom">
+              <div class="card__value__symbol">A</div>
+              <svg class="card__value__icon--heart">
+                <use xlink:href="img/symbol.svg#icon-heart"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="card card--visible">
+          <div class="card__side card__side--back">
+            <div class="card__backside-img"></div>
+          </div>
+          <div class="card__side card__side--front">
+            <div class="card__value card__value--black">
+              <div class="card__value__symbol">K</div>
+              <svg class="card__value__icon">
+                <use xlink:href="img/symbol.svg#icon-spades"></use>
+              </svg>
+            </div>
+            <div class="card__value card__value--black card__value--bottom">
+              <div class="card__value__symbol">K</div>
+              <svg class="card__value__icon">
+                <use xlink:href="img/symbol.svg#icon-spades"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="card card--hidden" id="10diamonds">
+          <div class="card__side card__side--back">
+            <div class="card__backside-img"></div>
+          </div>
+          <div class="card__side card__side--front">
+            <div class="card__value card__value--red">
+              <div class="card__value__symbol">10</div>
+              <svg class="card__value__icon">
+                <use xlink:href="img/symbol.svg#icon-diamonds"></use>
+              </svg>
+            </div>
+            <div class="card__value card__value--red card__value--bottom">
+              <div class="card__value__symbol">10</div>
+              <svg class="card__value__icon">
+                <use xlink:href="img/symbol.svg#icon-diamonds"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="card card--hidden card--top" id="4clubs">
+          <div class="card__side card__side--back">
+            <div class="card__backside-img"></div>
+          </div>
+          <div class="card__side card__side--front">
+            <div class="card__value card__value--black">
+              <div class="card__value__symbol">4</div>
+              <svg class="card__value__icon">
+                <use xlink:href="img/symbol.svg#icon-clubs"></use>
+              </svg>
+            </div>
+            <div class="card__value card__value--black card__value--bottom">
+              <div class="card__value__symbol">4</div>
+              <svg class="card__value__icon">
+                <use xlink:href="img/symbol.svg#icon-clubs"></use>
+              </svg>
+            </div>
+          </div>
+        </div> -->
       </div>
     </div>
   </body>

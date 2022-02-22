@@ -1,0 +1,72 @@
+.bank {
+  font-size: 3.5rem;
+  color: $yellow;
+  fill: $yellow;
+  text-shadow: 1px 1px 2px $black;
+  padding: 0.5rem 1rem;
+  background-image: linear-gradient(rgba($grey, 0.2), rgba($greenl, 0.2));
+  border-radius: 1rem;
+  box-shadow: -1px 1px 4px $grey, 1px -1px 4px $grey;
+  display: flex;
+  align-items: center;
+  &__icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    filter: drop-shadow(1px 1px 2px $black);
+  }
+}
+
+.bet--chip .chip {
+  position: absolute;
+  transform: rotateX(45deg);
+}
+
+.bet--chip .chip--500 {
+  box-shadow: 0 1rem $yellowd;
+}
+.bet--chip .chip--100 {
+  box-shadow: 0 1rem $black;
+}
+.bet--chip .chip--25 {
+  box-shadow: 0 1rem $redd;
+}
+.bet--chip .chip--5 {
+  box-shadow: 0 1rem $blued;
+}
+.bet--chip .chip--1 {
+  box-shadow: 0 1rem $green;
+}
+.bet--info {
+  z-index: 1;
+  font-size: 2rem;
+  color: $grey;
+  text-shadow: 1px 1px 2px $black;
+  padding: 0.5rem 1rem;
+  background-image: linear-gradient(rgba($grey, 0.2), rgba($greenl, 0.2));
+  border-radius: 1rem;
+  box-shadow: -1px 1px 4px $grey, 1px -1px 4px $grey;
+}
+.dealer-score {
+  z-index: 1;
+  font-size: 4rem;
+  color: $grey;
+  text-shadow: 1px 1px 2px $black;
+  padding: 0.5rem 1rem;
+  background-image: linear-gradient(rgba($grey, 0.2), rgba($greenl, 0.2));
+  border-radius: 1rem;
+  box-shadow: -1px 1px 4px $grey, 1px -1px 4px $grey;
+}
+.player-score {
+  z-index: 1;
+  font-size: 4rem;
+  color: $grey;
+  text-shadow: 1px 1px 2px $black;
+  padding: 0.5rem 1rem;
+  background-image: linear-gradient(rgba($grey, 0.2), rgba($greenl, 0.2));
+  border-radius: 1rem;
+  box-shadow: -1px 1px 4px $grey, 1px -1px 4px $grey;
+}
+.active-score {
+  color: $yellow;
+  box-shadow: -1px 1px 4px $yellow, 1px -1px 4px $yellow;
+}

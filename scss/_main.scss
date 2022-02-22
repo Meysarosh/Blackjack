@@ -29,15 +29,10 @@ body {
   font-size: 1rem;
   line-height: 1.7;
 }
-.table {
-  //temporary
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-
+.content {
+  z-index: -10;
   width: 100vw;
   height: 100vh;
   background-image: linear-gradient(rgba($green, 0.75), rgba($green, 0.75)),
     url("../img/background.jpg");
-  padding: 4rem;
 }
