@@ -45,45 +45,76 @@
 .player-card--1 {
   grid-row: 5/ 8;
   grid-column: 5 / 7;
+
+  height: 23.5rem;
+  width: 16.5rem;
 }
 .player-card--2 {
   grid-row: 5/ 8;
   grid-column: 7 / 9;
+
+  height: 23.5rem;
+  width: 16.5rem;
 }
 .player-card--3 {
   grid-row: 5/ 8;
   grid-column: 8 / 10;
+
+  height: 23.5rem;
+  width: 16.5rem;
 }
 .player-card--4 {
   grid-row: 5/ 8;
   grid-column: 9 / 11;
+
+  height: 23.5rem;
+  width: 16.5rem;
 }
 .player-card--5 {
   grid-row: 5/ 8;
   grid-column: 10 / 12;
+
+  height: 23.5rem;
+  width: 16.5rem;
 }
 .dealer-card--1 {
   grid-row: 1/ 4;
   grid-column: 5 / 7;
+
+  height: 23.5rem;
+  width: 16.5rem;
 }
 .dealer-card--2 {
   grid-row: 1/ 4;
   grid-column: 7 / 9;
+
+  height: 23.5rem;
+  width: 16.5rem;
 }
 .dealer-card--3 {
   grid-row: 1/ 4;
   grid-column: 8 / 10;
+
+  height: 23.5rem;
+  width: 16.5rem;
 }
 .dealer-card--4 {
   grid-row: 1/ 4;
   grid-column: 9 / 11;
+
+  height: 23.5rem;
+  width: 16.5rem;
 }
 .dealer-card--5 {
   grid-row: 1/ 4;
   grid-column: 10 / 12;
+
+  height: 23.5rem;
+  width: 16.5rem;
 }
 
 .chip-container {
+  position: relative;
   &--500 {
     grid-row: 9 / 10;
     grid-column: 11 / 12;

@@ -1,4 +1,18 @@
 export let bank = 1000;
+export let bet = 0;
+export let remain = bank;
+export const standart = [
+  "player-card--1",
+  "player-card--2",
+  "player-card--3",
+  "player-card--4",
+  "player-card--5",
+  "dealer-card--1",
+  "dealer-card--2",
+  "dealer-card--3",
+  "dealer-card--4",
+  "dealer-card--5",
+];
 const numbers = [
   "2",
   "3",
@@ -49,4 +63,10 @@ export const pickCard = function () {
   let i = Math.floor(Math.random() * deck.length);
   let card = deck.splice(i, 1);
   return card;
+};
+//betting
+export const calcBet = function (value) {
+  bet += value;
+  remain = bank - bet;
+  console.log(remain);
 };

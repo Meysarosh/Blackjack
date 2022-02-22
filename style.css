@@ -138,6 +138,7 @@ body {
     box-shadow: 0.4rem 0.8rem 1rem rgba(255, 204, 29, 0.25); } }
 
 .chip {
+  position: absolute;
   width: 9.65rem;
   height: 9.65rem;
   border-radius: 50%;
@@ -148,7 +149,12 @@ body {
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  transition: all 0.5s; }
+  .chip-container {
+    position: relative;
+    left: -4rem;
+    top: -4rem; }
   .chip__circle {
     width: 8.65rem;
     height: 8.65rem;
@@ -228,63 +234,81 @@ body {
 
 .player-card--1 {
   grid-row: 5/ 8;
-  grid-column: 5 / 7; }
+  grid-column: 5 / 7;
+  height: 23.5rem;
+  width: 16.5rem; }
 
 .player-card--2 {
   grid-row: 5/ 8;
-  grid-column: 7 / 9; }
+  grid-column: 7 / 9;
+  height: 23.5rem;
+  width: 16.5rem; }
 
 .player-card--3 {
   grid-row: 5/ 8;
-  grid-column: 8 / 10; }
+  grid-column: 8 / 10;
+  height: 23.5rem;
+  width: 16.5rem; }
 
 .player-card--4 {
   grid-row: 5/ 8;
-  grid-column: 9 / 11; }
+  grid-column: 9 / 11;
+  height: 23.5rem;
+  width: 16.5rem; }
 
 .player-card--5 {
   grid-row: 5/ 8;
-  grid-column: 10 / 12; }
+  grid-column: 10 / 12;
+  height: 23.5rem;
+  width: 16.5rem; }
 
 .dealer-card--1 {
   grid-row: 1/ 4;
-  grid-column: 5 / 7; }
+  grid-column: 5 / 7;
+  height: 23.5rem;
+  width: 16.5rem; }
 
 .dealer-card--2 {
   grid-row: 1/ 4;
-  grid-column: 7 / 9; }
+  grid-column: 7 / 9;
+  height: 23.5rem;
+  width: 16.5rem; }
 
 .dealer-card--3 {
   grid-row: 1/ 4;
-  grid-column: 8 / 10; }
+  grid-column: 8 / 10;
+  height: 23.5rem;
+  width: 16.5rem; }
 
 .dealer-card--4 {
   grid-row: 1/ 4;
-  grid-column: 9 / 11; }
+  grid-column: 9 / 11;
+  height: 23.5rem;
+  width: 16.5rem; }
 
 .dealer-card--5 {
   grid-row: 1/ 4;
-  grid-column: 10 / 12; }
+  grid-column: 10 / 12;
+  height: 23.5rem;
+  width: 16.5rem; }
 
-.chip-container--500 {
-  grid-row: 9 / 10;
-  grid-column: 11 / 12; }
-
-.chip-container--100 {
-  grid-row: 9 / 10;
-  grid-column: 10 / 11; }
-
-.chip-container--25 {
-  grid-row: 9 / 10;
-  grid-column: 9 / 10; }
-
-.chip-container--5 {
-  grid-row: 9 / 10;
-  grid-column: 8 / 9; }
-
-.chip-container--1 {
-  grid-row: 9 / 10;
-  grid-column: 7 / 8; }
+.chip-container {
+  position: relative; }
+  .chip-container--500 {
+    grid-row: 9 / 10;
+    grid-column: 11 / 12; }
+  .chip-container--100 {
+    grid-row: 9 / 10;
+    grid-column: 10 / 11; }
+  .chip-container--25 {
+    grid-row: 9 / 10;
+    grid-column: 9 / 10; }
+  .chip-container--5 {
+    grid-row: 9 / 10;
+    grid-column: 8 / 9; }
+  .chip-container--1 {
+    grid-row: 9 / 10;
+    grid-column: 7 / 8; }
 
 .bank {
   font-size: 3.5rem;
@@ -305,21 +329,6 @@ body {
 .bet--chip .chip {
   position: absolute;
   transform: rotateX(45deg); }
-
-.bet--chip .chip--500 {
-  box-shadow: 0 1rem #d09f00; }
-
-.bet--chip .chip--100 {
-  box-shadow: 0 1rem black; }
-
-.bet--chip .chip--25 {
-  box-shadow: 0 1rem #950101; }
-
-.bet--chip .chip--5 {
-  box-shadow: 0 1rem #0000aa; }
-
-.bet--chip .chip--1 {
-  box-shadow: 0 1rem #0b4619; }
 
 .bet--info {
   z-index: 1;
