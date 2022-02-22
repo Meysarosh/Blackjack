@@ -1,3 +1,11 @@
+import * as model from "./model.js";
+console.log(model.bank);
+console.log(model.deck);
+console.log(model.cardsDeck);
+model.createDeck();
+console.log(model.deck);
+console.log(model.pickCard());
+console.log(model.deck);
 //temporary
 
 let deck = document.querySelector(".deck-container");
