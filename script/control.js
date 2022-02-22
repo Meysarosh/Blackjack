@@ -45,12 +45,13 @@ document.querySelector(".deal").addEventListener("click", function () {
   const delay = (t) => new Promise((resolve) => setTimeout(resolve, t));
 
   playerCard1.style = ``;
-  delay(250).then(() => (dealerCard1.style = ``));
-  delay(500).then(() => (playerCard2.style = ``));
-  delay(750).then(() => (dealerCard2.style = ``));
-  delay(1000).then(() =>
-    document.getElementById("4clubs").classList.add("card--left")
-  );
+  delay(250).then(() => (dealerCard1.style = `z-index:1;`));
+  delay(500).then(() => (playerCard2.style = `z-index:1;`));
+  delay(750).then(() => (dealerCard2.style = `z-index:1;`));
+  delay(1000).then(() => {
+    playerCard2.style = `z-index:0;`;
+    document.getElementById("4clubs").classList.add("card--left");
+  });
   delay(1250).then(() => {
     document.querySelectorAll(".card").forEach((el) => {
       if (
