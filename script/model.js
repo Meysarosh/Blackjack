@@ -68,5 +68,4 @@ export const pickCard = function () {
 export const calcBet = function (value) {
   bet += value;
   remain = bank - bet;
-  console.log(remain);
 };

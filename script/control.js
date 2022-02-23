@@ -5,11 +5,13 @@ import bankView from "./bankView.js";
 const generateBet = function (value) {
   model.calcBet(value);
   bankView.showBet(model.bet);
+  bankView.showChip(model.bank, model.remain);
 };
 
 deckView.generateDeck(model.standart);
 bankView.generateBank(model.bank);
-bankView.placeBet(generateBet, model.remain);
+bankView.placeBet(generateBet);
+bankView.showChip(model.bank, model.remain);
 
 // document.querySelector(".deal").addEventListener("click", function () {
 //   const delay = (t) => new Promise((resolve) => setTimeout(resolve, t));
