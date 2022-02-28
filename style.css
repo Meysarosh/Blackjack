@@ -192,6 +192,7 @@ body {
     border: 0.75rem solid #0b4619; }
 
 .table {
+  position: relative;
   display: grid;
   grid-template-rows: repeat(9, 11%);
   grid-template-columns: repeat(11, 9%);
@@ -201,6 +202,14 @@ body {
   height: 100%;
   background-image: radial-gradient(transparent, rgba(0, 0, 0, 0.516));
   padding: 4rem; }
+
+.call-for-bet {
+  grid-row: 5 / 7;
+  grid-column: 7 / 12; }
+
+.call-for-bet-arrow {
+  grid-row: 7/ 9;
+  grid-column: 9 / 10; }
 
 .bank {
   grid-row: 9 / 10;
@@ -222,15 +231,31 @@ body {
   grid-row: 6 / 7;
   grid-column: 4 / 5; }
 
-.deal-container {
-  grid-row: 4 / 5;
-  grid-column: 6 / 8; }
-
 .deck-container {
   grid-row: 1/ 4;
   grid-column: 1 / 4;
   height: 16.5rem;
   width: 23.5rem; }
+
+.deal {
+  display: none;
+  grid-row: 4 / 5;
+  grid-column: 6 / 8; }
+
+.hit {
+  display: none;
+  grid-row: 4 / 5;
+  grid-column: 5 / 7; }
+
+.split {
+  display: none;
+  grid-row: 4 / 5;
+  grid-column: 6 / 8; }
+
+.stand {
+  display: none;
+  grid-row: 4 / 5;
+  grid-column: 7 / 9; }
 
 .player-card--1 {
   grid-row: 5/ 8;
@@ -326,6 +351,35 @@ body {
     height: 3.5rem;
     filter: drop-shadow(1px 1px 2px black); }
 
+.call-for-bet {
+  width: 100%;
+  height: 100%;
+  font-size: 3.5rem;
+  text-align: center;
+  color: #ffcc1d;
+  text-shadow: 1px 1px 2px black;
+  padding: 0.5rem 1rem;
+  background-image: linear-gradient(rgba(232, 232, 204, 0.2), rgba(17, 101, 48, 0.2));
+  border-radius: 1rem;
+  box-shadow: -1px 1px 4px #ffcc1d, 1px -1px 4px #ffcc1d; }
+
+.call-for-bet-arrow {
+  width: 100%;
+  height: 100%;
+  fill: rgba(255, 204, 29, 0.5);
+  filter: drop-shadow(0.25rem 0.25rem black);
+  animation: move 7s infinite; }
+
+@keyframes move {
+  0% {
+    transform: translateX(0); }
+  25% {
+    transform: translateX(-22.5rem); }
+  75% {
+    transform: translateX(22.5rem); }
+  100% {
+    transform: translateX(0rem); } }
+
 .bet--chip .chip {
   position: absolute;
   transform: rotateX(45deg); }
@@ -341,6 +395,7 @@ body {
   box-shadow: -1px 1px 4px #e8e8cc, 1px -1px 4px #e8e8cc; }
 
 .dealer-score {
+  display: none;
   z-index: 1;
   font-size: 4rem;
   color: #e8e8cc;
@@ -351,6 +406,7 @@ body {
   box-shadow: -1px 1px 4px #e8e8cc, 1px -1px 4px #e8e8cc; }
 
 .player-score {
+  display: none;
   z-index: 1;
   font-size: 4rem;
   color: #e8e8cc;

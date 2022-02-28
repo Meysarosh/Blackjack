@@ -1,6 +1,6 @@
 class BankView {
   parentElement = document.querySelector(".table");
-
+  bankInfo = document.querySelector(".bank__info");
   chips(num) {
     if (num == 500)
       return `<div class="chip chip--500 chip-bank" data-id="500"><div class="chip__circle"><div class="chip__midle" >500</div></div></div>`;
@@ -25,9 +25,7 @@ class BankView {
             </svg>
             </div>
 
-            <div class="deal-container">
-            <button class="btn btn--animated deal">deal</button>
-            </div>
+            
 
             <div class="chip-container chip-container--500">
                 ${this.chips(500)}
@@ -126,6 +124,9 @@ class BankView {
         el.classList.add("chip-hidden");
       }
     });
+  }
+  yourBank(amount) {
+    document.querySelector(".bank__info").innerHTML = `Your Bank: ${amount}`;
   }
 }
 export default new BankView();
