@@ -3,6 +3,8 @@ import deckView from "./deckView.js";
 import bankView from "./bankView.js";
 import gameView from "./gameView.js";
 
+const delay = (t) => new Promise((resolve) => setTimeout(resolve, t));
+
 const generateBet = function (value) {
   model.calcBet(value);
   bankView.showBet(model.bet);
@@ -14,18 +16,22 @@ const startGame = function () {
   model.reduceBank();
   bankView.yourBank(model.bank);
   deckView.dropStarterCards(model.starterCards());
-  setTimeout(() => {
+  delay(2000).then(() => {
     gameView.showScore(model.calcScore("player"), model.dealersCards[1].value);
-  }, 2000);
-  if (model.calcScore("player") == 21) dealerGame();
+  });
+  if (model.calcScore("player") == 21) {
+    delay(2000).then(() => {
+      dealerGame();
+    });
+  }
 };
 
 const nextCardForPlayer = function () {
   model.pickCard("player");
   deckView.dropNextCardForPlayer(model.playersCards);
-  setTimeout(() => {
+  delay(500).then(() => {
     gameView.showScore(model.calcScore("player"), model.dealersCards[1].value);
-  }, 500);
+  });
   if (model.calcScore("player") >= 21) dealerGame();
 };
 
@@ -36,14 +42,13 @@ const nextCardForDealer = function () {
 };
 
 const dealerGame = function () {
-  const delay = (t) => new Promise((resolve) => setTimeout(resolve, t));
   gameView.dealer();
   deckView.showDealerFirstCard(model.dealersCards[0]);
   delay(500).then(() => {
     gameView.showScore(model.calcScore("player"), model.calcScore("dealer"));
   });
   if (model.calcScore("player") > 21) return;
-  delay(500).then(() => {
+  delay(750).then(() => {
     if (model.calcScore("dealer") < 17) {
       nextCardForDealer();
     }
