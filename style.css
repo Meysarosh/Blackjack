@@ -335,6 +335,14 @@ body {
     grid-row: 9 / 10;
     grid-column: 7 / 8; }
 
+.win--player {
+  grid-row: 6 / 7;
+  grid-column: 5 / 9; }
+
+.win--dealer {
+  grid-row: 2 / 3;
+  grid-column: 5 / 9; }
+
 .bank {
   font-size: 3.5rem;
   color: #ffcc1d;
@@ -419,3 +427,20 @@ body {
 .active-score {
   color: #ffcc1d;
   box-shadow: -1px 1px 4px #ffcc1d, 1px -1px 4px #ffcc1d; }
+
+.win {
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  font-size: 4.5rem;
+  text-align: center;
+  color: #e8e8cc;
+  text-shadow: 1px 1px 2px black;
+  padding: 0.5rem 1rem;
+  background-image: linear-gradient(red, #950101);
+  border-radius: 1rem;
+  box-shadow: -1px 1px 4px #e8e8cc, 1px -1px 4px #e8e8cc; }
+  .win--player {
+    visibility: hidden; }
+  .win--dealer {
+    visibility: hidden; }

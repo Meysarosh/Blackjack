@@ -161,3 +161,13 @@
     grid-column: 7 / 8;
   }
 }
+.win {
+  &--player {
+    grid-row: 6 / 7;
+    grid-column: 5 / 9;
+  }
+  &--dealer {
+    grid-row: 2 / 3;
+    grid-column: 5 / 9;
+  }
+}
