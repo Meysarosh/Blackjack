@@ -2,9 +2,15 @@ class DeckView {
   parentElement = document.querySelector(".table");
   playerCard1;
   playerCard2;
+  playerCard3;
+  playerCard4;
+  playerCard5;
   first2PlayerCards;
   dealerCard1;
   dealerCard2;
+  dealerCard3;
+  dealerCard4;
+  dealerCard5;
 
   generateDeck(standart) {
     this.parentElement.insertAdjacentHTML(
@@ -49,9 +55,15 @@ class DeckView {
     });
     this.playerCard1 = document.querySelector(".player-card--1");
     this.playerCard2 = document.querySelector(".player-card--2");
+    this.playerCard3 = document.querySelector(".player-card--3");
+    this.playerCard4 = document.querySelector(".player-card--4");
+    this.playerCard5 = document.querySelector(".player-card--5");
     this.first2PlayerCards = [this.playerCard1, this.playerCard2];
     this.dealerCard1 = document.querySelector(".dealer-card--1");
     this.dealerCard2 = document.querySelector(".dealer-card--2");
+    this.dealerCard3 = document.querySelector(".dealer-card--3");
+    this.dealerCard4 = document.querySelector(".dealer-card--4");
+    this.dealerCard5 = document.querySelector(".dealer-card--5");
   }
 
   insertFrontCardView(card) {
@@ -114,6 +126,81 @@ class DeckView {
       this.dealerCard2.classList.toggle("card--visible");
       this.dealerCard2.classList.toggle("card--hidden");
       this.dealerCard2.style.transform = "translateX(-100%)";
+    });
+  }
+  dropNextCardForPlayer(cards) {
+    const delay = (t) => new Promise((resolve) => setTimeout(resolve, t));
+    const num = cards.length;
+    let prevElement;
+    let curElement;
+    if (num == 3) {
+      prevElement = this.playerCard2;
+      curElement = this.playerCard3;
+    }
+    if (num == 4) {
+      prevElement = this.playerCard3;
+      curElement = this.playerCard4;
+    }
+    if (num == 5) {
+      prevElement = this.playerCard4;
+      curElement = this.playerCard5;
+    }
+
+    prevElement.style.transform = "translateX(-100%)";
+    curElement.insertAdjacentHTML(
+      "beforeend",
+      this.insertFrontCardView(cards[num - 1])
+    );
+    curElement.style = `z-index:1;`;
+    delay(500).then(() => {
+      curElement.classList.toggle("card--visible");
+      curElement.classList.toggle("card--hidden");
+      curElement.style.transform = "translateX(-100%)";
+    });
+  }
+
+  showDealerFirstCard(card) {
+    const delay = (t) => new Promise((resolve) => setTimeout(resolve, t));
+
+    this.dealerCard1.insertAdjacentHTML(
+      "beforeend",
+      this.insertFrontCardView(card)
+    );
+
+    this.dealerCard2.style = "";
+    delay(400).then(() => {
+      this.dealerCard1.classList.toggle("card--visible");
+      this.dealerCard1.classList.toggle("card--hidden");
+    });
+  }
+  dropNextCardForDealer(cards) {
+    const delay = (t) => new Promise((resolve) => setTimeout(resolve, t));
+    const num = cards.length;
+    let prevElement;
+    let curElement;
+    if (num == 3) {
+      prevElement = this.dealerCard2;
+      curElement = this.dealerCard3;
+    }
+    if (num == 4) {
+      prevElement = this.dealerCard3;
+      curElement = this.dealerCard4;
+    }
+    if (num == 5) {
+      prevElement = this.dealerCard4;
+      curElement = this.dealerCard5;
+    }
+
+    prevElement.style.transform = "translateX(-100%)";
+    curElement.insertAdjacentHTML(
+      "beforeend",
+      this.insertFrontCardView(cards[num - 1])
+    );
+    curElement.style = `z-index:1;`;
+    delay(500).then(() => {
+      curElement.classList.toggle("card--visible");
+      curElement.classList.toggle("card--hidden");
+      curElement.style.transform = "translateX(-100%)";
     });
   }
 }

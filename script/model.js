@@ -57,37 +57,42 @@ export const createDeck = function () {
   deck = cardsDeck.map((card) => card.id);
 };
 //randomly pick a card from deck (returning picked card and removing it from deck)
-export const pickCard = function () {
+export const pickCard = function (comand) {
   let i = Math.floor(Math.random() * deck.length);
-  let card = deck.splice(i, 1)[0];
+  let cardname = deck.splice(i, 1)[0];
+  let card = cardsDeck.filter((card) => card.id == cardname)[0];
+  if (comand == "player") playersCards.push(card);
+  if (comand == "dealer") dealersCards.push(card);
   return card;
 };
 //first 4 cards of game
 export const starterCards = function () {
-  const cardnames = [];
-  let cards = [];
-  cardnames.push(pickCard());
-  cardnames.push(pickCard());
-  cardnames.push(pickCard());
-  cardnames.push(pickCard());
-  cards = cardnames.map((el) => cardsDeck.filter((card) => card.id == el)[0]);
-  playersCards.push(cards[0]);
-  playersCards.push(cards[2]);
-  dealersCards.push(cards[1]);
-  dealersCards.push(cards[3]);
+  const cards = [];
+  cards.push(pickCard("player"));
+  cards.push(pickCard("dealer"));
+  cards.push(pickCard("player"));
+  cards.push(pickCard("dealer"));
   return cards;
 };
-//
+//next card(s)
+// export const nextCard = function (comand) {
+//   const card = pickCard(comand);
+// };
+// calculates player or dealer score
 export const calcScore = function (who) {
+  let sum;
   if (who == "player") {
-    return playersCards.reduce((acum, el) => {
+    sum = playersCards.reduce((acum, el) => {
       return acum + el.value;
     }, 0);
+    if (sum > 21 && playersCards.find((el) => el.value == 11)) sum -= 10;
   } else {
-    return dealersCards.reduce((acum, el) => {
+    sum = dealersCards.reduce((acum, el) => {
       return acum + el.value;
     }, 0);
+    if (sum > 21 && dealersCards.find((el) => el.value == 11)) sum -= 10;
   }
+  return sum;
 };
 //betting
 export const calcBet = function (value) {

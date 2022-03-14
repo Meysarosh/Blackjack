@@ -46,6 +46,32 @@ class GameView {
       control();
     });
   }
+  hit(control) {
+    const hitBtn = this.hitBtn;
+    const splitBtn = this.splitBtn;
+    const standBtn = this.standBtn;
+    this.parentElement.addEventListener("click", function (e) {
+      if (!e.target.closest(".hit")) return;
+      control();
+    });
+  }
+  stand(control) {
+    const hitBtn = this.hitBtn;
+    const splitBtn = this.splitBtn;
+    const standBtn = this.standBtn;
+    this.parentElement.addEventListener("click", function (e) {
+      if (!e.target.closest(".stand")) return;
+      hitBtn.style.display = "none";
+      splitBtn.style.display = "none";
+      standBtn.style.display = "none";
+      control();
+    });
+  }
+  dealer() {
+    this.hitBtn.style.display = "none";
+    this.splitBtn.style.display = "none";
+    this.standBtn.style.display = "none";
+  }
   showScore(pscore, dscore) {
     this.playerScore.style.display = "block";
     this.playerScore.innerHTML = pscore;
