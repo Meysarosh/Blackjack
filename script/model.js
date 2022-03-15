@@ -102,3 +102,19 @@ export const calcBet = function (value) {
 export const reduceBank = function () {
   bank = remain;
 };
+//compaire score results and returns who is winner
+export const result = function () {
+  let res;
+  if (calcScore("player") > 21) {
+    res = "dealer";
+  } else if (calcScore("dealer") > 21) {
+    res = "player";
+  } else if (calcScore("player") == calcScore("dealer")) {
+    res = "draw";
+  } else if (calcScore("player") > calcScore("dealer")) {
+    res = "player";
+  } else if (calcScore("player") < calcScore("dealer")) {
+    res = "dealer";
+  }
+  return res;
+};

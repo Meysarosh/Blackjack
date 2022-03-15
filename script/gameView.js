@@ -6,6 +6,9 @@ class GameView {
   standBtn = document.querySelector(".stand");
   playerScore = document.querySelector(".player-score");
   dealerScore = document.querySelector(".dealer-score");
+  infoWinPlayer = document.querySelector(".win--player");
+  infoWinDealer = document.querySelector(".win--dealer");
+  infoWinDraw = document.querySelector(".win--draw");
 
   callForBet(bet) {
     if (bet == 0) {
@@ -78,6 +81,11 @@ class GameView {
 
     this.dealerScore.style.display = "block";
     this.dealerScore.innerHTML = dscore;
+  }
+  infoWin(comand) {
+    if (comand == "player") this.infoWinPlayer.classList.toggle("hidden");
+    if (comand == "dealer") this.infoWinDealer.classList.toggle("hidden");
+    if (comand == "draw") this.infoWinDraw.classList.toggle("hidden");
   }
 }
 export default new GameView();

@@ -138,13 +138,16 @@
   background-image: linear-gradient($red, $redd);
   border-radius: 1rem;
   box-shadow: -1px 1px 4px $grey, 1px -1px 4px $grey;
-  &--player {
-    visibility: hidden;
-  }
-  &--dealer {
-    visibility: hidden;
-  }
-  &--draw {
-    visibility: hidden;
-  }
+  // &--player {
+  //   visibility: hidden;
+  // }
+  // &--dealer {
+  //   visibility: hidden;
+  // }
+  // &--draw {
+  //   visibility: hidden;
+  // }
+}
+.hidden {
+  visibility: hidden;
 }

@@ -6,11 +6,13 @@ class DeckView {
   playerCard4;
   playerCard5;
   first2PlayerCards;
+  playerCards;
   dealerCard1;
   dealerCard2;
   dealerCard3;
   dealerCard4;
   dealerCard5;
+  dealerCards;
 
   generateDeck(standart) {
     this.parentElement.insertAdjacentHTML(
@@ -64,6 +66,20 @@ class DeckView {
     this.dealerCard3 = document.querySelector(".dealer-card--3");
     this.dealerCard4 = document.querySelector(".dealer-card--4");
     this.dealerCard5 = document.querySelector(".dealer-card--5");
+    this.playerCards = [
+      this.playerCard1,
+      this.playerCard2,
+      this.playerCard3,
+      this.playerCard4,
+      this.playerCard5,
+    ];
+    this.dealerCards = [
+      this.dealerCard1,
+      this.dealerCard2,
+      this.dealerCard3,
+      this.dealerCard4,
+      this.dealerCard5,
+    ];
   }
 
   insertFrontCardView(card) {
@@ -202,6 +218,18 @@ class DeckView {
       curElement.classList.toggle("card--hidden");
       curElement.style.transform = "translateX(-100%)";
     });
+  }
+  cardsBrightness(comand) {
+    if (comand == "dealer") {
+      this.playerCards.forEach((el) => el.classList.toggle("dark"));
+    }
+    if (comand == "player") {
+      this.dealerCards.forEach((el) => el.classList.toggle("dark"));
+    }
+    if (comand == "draw") {
+      this.playerCards.forEach((el) => el.classList.toggle("dark"));
+      this.dealerCards.forEach((el) => el.classList.toggle("dark"));
+    }
   }
 }
 export default new DeckView();

@@ -90,6 +90,9 @@ body {
         width: 2.5rem;
         height: 2.5rem; }
 
+.dark {
+  filter: brightness(50%); }
+
 .btn {
   width: 15rem;
   height: 6rem;
@@ -444,9 +447,6 @@ body {
   background-image: linear-gradient(red, #950101);
   border-radius: 1rem;
   box-shadow: -1px 1px 4px #e8e8cc, 1px -1px 4px #e8e8cc; }
-  .win--player {
-    visibility: hidden; }
-  .win--dealer {
-    visibility: hidden; }
-  .win--draw {
-    visibility: hidden; }
+
+.hidden {
+  visibility: hidden; }
