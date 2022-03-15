@@ -343,6 +343,10 @@ body {
   grid-row: 2 / 3;
   grid-column: 5 / 9; }
 
+.win--draw {
+  grid-row: 4 / 5;
+  grid-column: 5 / 9; }
+
 .bank {
   font-size: 3.5rem;
   color: #ffcc1d;
@@ -443,4 +447,6 @@ body {
   .win--player {
     visibility: hidden; }
   .win--dealer {
+    visibility: hidden; }
+  .win--draw {
     visibility: hidden; }
