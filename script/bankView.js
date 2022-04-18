@@ -128,5 +128,59 @@ class BankView {
   yourBank(amount) {
     document.querySelector(".bank__info").innerHTML = `Your Bank: ${amount}`;
   }
+
+  whoWonTakeBet(result, bet) {
+    let chipsOnTable;
+    let counter;
+    const scanChipsOnTable = function () {
+      chipsOnTable = [];
+      counter = 0;
+      document.querySelectorAll(".chip-bet").forEach((el) => {
+        chipsOnTable.push(el);
+      });
+      chipsOnTable.sort(function (a, b) {
+        return a.style.zIndex - b.style.zIndex;
+      });
+      counter = chipsOnTable.length;
+    };
+
+    // console.log(chipsOnTable[0].outerHTML);
+
+    const chipsToDealer = function () {
+      chipsOnTable[
+        counter - 1
+      ].style = `transform: translate(-500px, -1000px) rotateX(70deg);`;
+      counter = counter - 1;
+      if (counter > 0) {
+        setTimeout(chipsToDealer, 250);
+      }
+    };
+    const chipsToPlayer = function () {
+      chipsOnTable[counter - 1].style = ``;
+      chipsOnTable[counter - 1].classList.remove("chip-bet");
+      chipsOnTable[counter - 1].classList.add("chip-bank");
+      counter = counter - 1;
+      if (counter > 0) {
+        setTimeout(chipsToPlayer, 250);
+      }
+    };
+    if (result == "dealer") {
+      scanChipsOnTable();
+      chipsToDealer();
+    }
+    if (result == "draw") {
+      scanChipsOnTable();
+      chipsToPlayer();
+    }
+    if (result == "player") {
+      scanChipsOnTable();
+      this.parentElement.insertAdjacentHTML(
+        "beforeend",
+        `${chipsOnTable[0].outerHTML}`
+      );
+      scanChipsOnTable();
+      chipsToPlayer();
+    }
+  }
 }
 export default new BankView();

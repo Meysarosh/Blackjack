@@ -36,17 +36,21 @@ const nextCardForPlayer = function () {
 };
 
 const nextCardForDealer = function () {
-  model.pickCard("dealer");
-  deckView.dropNextCardForDealer(model.dealersCards);
-  gameView.showScore(model.calcScore("player"), model.calcScore("dealer"));
+  if (model.calcScore("dealer") < 17) {
+    model.pickCard("dealer");
+    deckView.dropNextCardForDealer(model.dealersCards);
+    gameView.showScore(model.calcScore("player"), model.calcScore("dealer"));
+    setTimeout(nextCardForDealer, 500);
+  } else {
+    endGame();
+  }
 };
 
 const endGame = function () {
-  console.log(model.result());
   const comand = model.result();
   gameView.infoWin(comand);
   deckView.cardsBrightness(comand);
-  console.log(model.bet);
+  bankView.whoWonTakeBet(comand, model.bet);
 };
 
 const dealerGame = function () {
@@ -60,28 +64,7 @@ const dealerGame = function () {
       endGame();
       return;
     }
-    if (model.calcScore("dealer") >= 17) {
-      endGame();
-      return;
-    }
-    delay(500).then(() => {
-      if (model.calcScore("dealer") < 17) {
-        nextCardForDealer();
-      }
-    });
-    delay(1000).then(() => {
-      if (model.calcScore("dealer") < 17) {
-        nextCardForDealer();
-      }
-    });
-    delay(1500).then(() => {
-      if (model.calcScore("dealer") < 17) {
-        nextCardForDealer();
-      }
-    });
-    delay(1500).then(() => {
-      endGame();
-    });
+    nextCardForDealer();
   });
 };
 
