@@ -192,13 +192,15 @@ class BankView {
         chipContainer.insertAdjacentHTML(
           "beforeend",
           `
-        <div class="chip chip--${el.dataset.id} chip-bet" data-id="${
+        <div class="chip chip--${el.dataset.id} chip-dealer" data-id="${
             el.dataset.id
           }" style="transform: translate(${
             chipPosition.left - containerPosition.left - 100
           }px, ${
             chipPosition.top - containerPosition.top
-          }px) rotateX(45deg);"><div class="chip__circle"><div class="chip__midle" >${
+          }px) rotateX(45deg); z-index: ${
+            i + 1
+          };"><div class="chip__circle"><div class="chip__midle" >${
             el.dataset.id
           }</div></div></div>
         `
