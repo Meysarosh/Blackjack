@@ -174,10 +174,37 @@ class BankView {
     }
     if (result == "player") {
       scanChipsOnTable();
-      this.parentElement.insertAdjacentHTML(
-        "beforeend",
-        `${chipsOnTable[0].outerHTML}`
-      );
+      chipsOnTable.forEach((el, i) => {
+        console.log(el.dataset.id);
+        console.log(chipsOnTable[i].outerHTML);
+        let chipPosition = el.getBoundingClientRect();
+        let chipContainer = document.querySelector(
+          `.chip-container--${el.dataset.id}`
+        );
+        let containerPosition = chipContainer.getBoundingClientRect();
+        console.log(
+          i,
+          chipPosition.left,
+          containerPosition.left,
+          chipPosition.top,
+          containerPosition.top
+        );
+        chipContainer.insertAdjacentHTML(
+          "beforeend",
+          `
+        <div class="chip chip--${el.dataset.id} chip-bet" data-id="${
+            el.dataset.id
+          }" style="transform: translate(${
+            chipPosition.left - containerPosition.left - 100
+          }px, ${
+            chipPosition.top - containerPosition.top
+          }px) rotateX(45deg);"><div class="chip__circle"><div class="chip__midle" >${
+            el.dataset.id
+          }</div></div></div>
+        `
+        );
+      });
+
       scanChipsOnTable();
       chipsToPlayer();
     }
