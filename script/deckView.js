@@ -14,7 +14,7 @@ class DeckView {
   dealerCard5;
   dealerCards;
 
-  generateDeck(standart) {
+  displayDeck(standart) {
     this.parentElement.insertAdjacentHTML(
       "beforeend",
       ` <div class="deck-container">

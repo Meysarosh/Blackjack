@@ -40,6 +40,7 @@ export const dealersCards = [];
 symbols.forEach((symbol) => {
   numbers.forEach((number) => {
     let id = number + symbol;
+    // defines value from number array where are numbers and letters, number=number else A=11 an dall the outhe letters =10.
     let value = parseInt(number) ? parseInt(number) : number == "A" ? 11 : 10;
     let color = symbol == "hearts" || symbol == "diamonds" ? "red" : "black";
     let icon = symbol == "hearts" ? "heart" : symbol;
@@ -52,7 +53,8 @@ symbols.forEach((symbol) => {
     });
   });
 });
-// creating deck from cardsDeck
+
+// creating deck from cardsDeck (extracting only card.id's)
 export const createDeck = function () {
   deck = cardsDeck.map((card) => card.id);
 };
@@ -74,10 +76,12 @@ export const starterCards = function () {
   cards.push(pickCard("dealer"));
   return cards;
 };
+///???????????????
 //next card(s)
 // export const nextCard = function (comand) {
 //   const card = pickCard(comand);
 // };
+
 // calculates player or dealer score
 export const calcScore = function (who) {
   let sum;
@@ -94,14 +98,18 @@ export const calcScore = function (who) {
   }
   return sum;
 };
+
 //betting
 export const calcBet = function (value) {
   bet += value;
   remain = bank - bet;
 };
+
+//owerwrites bank value
 export const reduceBank = function () {
   bank = remain;
 };
+
 //compaire score results and returns who is winner
 export const result = function () {
   let res;

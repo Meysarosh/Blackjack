@@ -14,7 +14,8 @@ class BankView {
       return `<div class="chip chip--1 chip-bank" data-id="1"><div class="chip__circle"><div class="chip__midle" >1</div></div></div>`;
   }
 
-  generateBank(amount) {
+  //displays your bank + value and chips on the table
+  displayBank(amount) {
     this.parentElement.insertAdjacentHTML(
       "afterbegin",
       `
@@ -46,6 +47,10 @@ class BankView {
     );
   }
 
+  //listens to clicking on chips,
+  //extracts value from clicked chip
+  //moves clicked chip from bank to bet and copys that chip to bank and backwards, chips move is based on div position and quantity of chips
+  //in the and calls function in control.js that controlls bank/remain value and display chips based on remain value
   placeBet(control) {
     const chip = this.chips;
     this.parentElement.addEventListener("click", function (e) {
@@ -97,6 +102,8 @@ class BankView {
       control(value);
     });
   }
+
+  //if your bet message exists, owerwrites it with the new value, else inserts message with the bet value
   showBet(bet) {
     if (document.querySelector(".bet--info")) {
       document.querySelector(".bet--info").textContent = `Your Bet:${bet}`;
@@ -109,6 +116,9 @@ class BankView {
       );
     }
   }
+
+  // if remain is bigger then the chip value, displays the chip in bank,
+  //if the chip value bigger then the remain the chip will be hidden
   showChip(bank, remain) {
     document.querySelectorAll(".chip-hidden").forEach((el) => {
       if (parseInt(el.dataset.id) < remain) {
@@ -125,6 +135,8 @@ class BankView {
       }
     });
   }
+
+  //displays bank after bet
   yourBank(amount) {
     document.querySelector(".bank__info").innerHTML = `Your Bank: ${amount}`;
   }

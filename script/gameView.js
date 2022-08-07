@@ -10,6 +10,7 @@ class GameView {
   infoWinDealer = document.querySelector(".win--dealer");
   infoWinDraw = document.querySelector(".win--draw");
 
+  //displaying message that calls for making bet if bet=0
   callForBet(bet) {
     if (bet == 0) {
       this.parentElement.insertAdjacentHTML(
@@ -25,6 +26,8 @@ class GameView {
       );
     }
   }
+
+  //hides call for bet message and the moving arrow, displays deal button. If all the chips was removed from bet (bet=0) displaying call for bet message and the moving arrow
   betPlaced(bet) {
     document.querySelector(".call-for-bet").style.display = "none";
     document.querySelector(".call-for-bet-arrow").style.display = "none";
@@ -35,6 +38,8 @@ class GameView {
       document.querySelector(".call-for-bet-arrow").style.display = "block";
     }
   }
+
+  //listen to clicking on deal button and if it was clicked hides it, shows hit and stand buttons. Than calls ontrol.js function
   deal(control) {
     const dealBtn = this.dealBtn;
     const hitBtn = this.hitBtn;
@@ -49,6 +54,8 @@ class GameView {
       control();
     });
   }
+
+  // listener to hit button than call control.js function
   hit(control) {
     const hitBtn = this.hitBtn;
     const splitBtn = this.splitBtn;
@@ -58,6 +65,8 @@ class GameView {
       control();
     });
   }
+
+  // listener to hit button than call control.js function
   stand(control) {
     const hitBtn = this.hitBtn;
     const splitBtn = this.splitBtn;
@@ -70,11 +79,15 @@ class GameView {
       control();
     });
   }
+
+  //hides all buttons when dealers game
   dealer() {
     this.hitBtn.style.display = "none";
     this.splitBtn.style.display = "none";
     this.standBtn.style.display = "none";
   }
+
+  //displays players and dealers open cards score
   showScore(pscore, dscore) {
     this.playerScore.style.display = "block";
     this.playerScore.innerHTML = pscore;
@@ -82,6 +95,8 @@ class GameView {
     this.dealerScore.style.display = "block";
     this.dealerScore.innerHTML = dscore;
   }
+
+  //displays winner message based on result of game
   infoWin(comand) {
     if (comand == "player") this.infoWinPlayer.classList.toggle("hidden");
     if (comand == "dealer") this.infoWinDealer.classList.toggle("hidden");
