@@ -82,6 +82,7 @@ class DeckView {
     ];
   }
 
+  //function for inserting front view for the cards
   insertFrontCardView(card) {
     return `
     <div class="card__side card__side--front">
@@ -100,6 +101,7 @@ class DeckView {
     </div>`;
   }
 
+  //drops 4 cards from deck to players and rotates tree of them
   dropStarterCards(starterCards) {
     this.playerCard1.insertAdjacentHTML(
       "beforeend",
@@ -144,6 +146,8 @@ class DeckView {
       this.dealerCard2.style.transform = "translateX(-100%)";
     });
   }
+
+  //moves previous cards and drops next card from deck than rotating it
   dropNextCardForPlayer(cards) {
     const delay = (t) => new Promise((resolve) => setTimeout(resolve, t));
     const num = cards.length;
@@ -175,6 +179,7 @@ class DeckView {
     });
   }
 
+  //inserts front card view and rotating it
   showDealerFirstCard(card) {
     const delay = (t) => new Promise((resolve) => setTimeout(resolve, t));
 
@@ -189,6 +194,8 @@ class DeckView {
       this.dealerCard1.classList.toggle("card--hidden");
     });
   }
+
+  //moves previous cards and drops next card from deck than rotating it
   dropNextCardForDealer(cards) {
     const delay = (t) => new Promise((resolve) => setTimeout(resolve, t));
     const num = cards.length;
@@ -219,6 +226,8 @@ class DeckView {
       curElement.style.transform = "translateX(-100%)";
     });
   }
+
+  //changing cards brightness based on winner
   cardsBrightness(comand) {
     if (comand == "dealer") {
       this.playerCards.forEach((el) => el.classList.toggle("dark"));
