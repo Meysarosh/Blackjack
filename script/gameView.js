@@ -1,6 +1,7 @@
 class GameView {
   parentElement = document.querySelector(".table");
   dealBtn = document.querySelector(".deal");
+  newGameBtn = document.querySelector(".new-game");
   hitBtn = document.querySelector(".hit");
   splitBtn = document.querySelector(".split");
   standBtn = document.querySelector(".stand");
@@ -101,6 +102,11 @@ class GameView {
     if (comand == "player") this.infoWinPlayer.classList.toggle("hidden");
     if (comand == "dealer") this.infoWinDealer.classList.toggle("hidden");
     if (comand == "draw") this.infoWinDraw.classList.toggle("hidden");
+  }
+
+  //display new game button
+  newGame() {
+    this.newGameBtn.style.display = "block";
   }
 }
 export default new GameView();

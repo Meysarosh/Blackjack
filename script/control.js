@@ -56,7 +56,8 @@ const endGame = function () {
   const comand = model.result();
   gameView.infoWin(comand);
   deckView.cardsBrightness(comand);
-  bankView.whoWonTakeBet(comand, model.bet);
+  bankView.whoWonTakeBet(comand, model.plusBank());
+  gameView.newGame();
 };
 
 //hides buttons, shows dilers first card, shows scores, if player has less then 21 request next card for dealer

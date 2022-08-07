@@ -126,3 +126,12 @@ export const result = function () {
   }
   return res;
 };
+
+export const plusBank = function () {
+  if (result() == "draw") {
+    bank = remain + bet;
+  } else if (result() == "player") {
+    bank = remain + 2 * bet;
+  }
+  return bank;
+};

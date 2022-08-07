@@ -141,7 +141,7 @@ class BankView {
     document.querySelector(".bank__info").innerHTML = `Your Bank: ${amount}`;
   }
 
-  whoWonTakeBet(result, bet) {
+  whoWonTakeBet(result, bank) {
     let chipsOnTable;
     let counter;
     const scanChipsOnTable = function () {
@@ -186,6 +186,7 @@ class BankView {
     if (result == "draw") {
       scanChipsOnTable();
       chipsToPlayer();
+      this.yourBank(bank);
     }
     if (result == "player") {
       scanChipsOnTable();
@@ -224,6 +225,7 @@ class BankView {
 
       scanChipsOnTable();
       chipsToPlayer();
+      this.yourBank(bank);
     }
   }
 }
