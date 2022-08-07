@@ -150,6 +150,9 @@ class BankView {
       document.querySelectorAll(".chip-bet").forEach((el) => {
         chipsOnTable.push(el);
       });
+      document.querySelectorAll(".chip-dealer").forEach((el) => {
+        chipsOnTable.push(el);
+      });
       chipsOnTable.sort(function (a, b) {
         return a.style.zIndex - b.style.zIndex;
       });
