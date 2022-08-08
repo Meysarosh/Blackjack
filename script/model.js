@@ -135,6 +135,5 @@ export const plusBank = function () {
   }
   bet = 0;
   remain = bank;
-  console.log(bet, remain, bank);
   return bank;
 };

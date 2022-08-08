@@ -103,23 +103,13 @@ class BankView {
     });
   }
 
-  //if your bet message exists, owerwrites it with the new value, else inserts message with the bet value
+  //inserts a value and displays the message or hides it when value=0
   showBet(bet) {
     document.querySelector(".bet--info").textContent = `Your Bet:${bet}`;
     document.querySelector(".bet--info").style.display = "block";
     if (bet == 0) {
       document.querySelector(".bet--info").style.display = "none";
     }
-    // if (document.querySelector(".bet--info")) {
-    //   document.querySelector(".bet--info").textContent = `Your Bet:${bet}`;
-    // } else {
-    //   this.parentElement.insertAdjacentHTML(
-    //     "afterbegin",
-    //     `
-    //             <div class="bet--info">Your Bet:${bet}</div>
-    //             `
-    //   );
-    // }
   }
 
   // if remain is bigger then the chip value, displays the chip in bank,
@@ -197,20 +187,18 @@ class BankView {
     if (result == "player") {
       scanChipsOnTable();
       chipsOnTable.forEach((el, i) => {
-        console.log(el.dataset.id);
-        console.log(chipsOnTable[i].outerHTML);
         let chipPosition = el.getBoundingClientRect();
         let chipContainer = document.querySelector(
           `.chip-container--${el.dataset.id}`
         );
         let containerPosition = chipContainer.getBoundingClientRect();
-        console.log(
-          i,
-          chipPosition.left,
-          containerPosition.left,
-          chipPosition.top,
-          containerPosition.top
-        );
+        // console.log(
+        //   i,
+        //   chipPosition.left,
+        //   containerPosition.left,
+        //   chipPosition.top,
+        //   containerPosition.top
+        // );
         chipContainer.insertAdjacentHTML(
           "beforeend",
           `

@@ -10,34 +10,27 @@ class GameView {
   infoWinPlayer = document.querySelector(".win--player");
   infoWinDealer = document.querySelector(".win--dealer");
   infoWinDraw = document.querySelector(".win--draw");
-
-  //displaying message that calls for making bet if bet=0
-  callForBet(bet) {
-    if (bet == 0) {
-      this.parentElement.insertAdjacentHTML(
-        "beforeend",
-        `
-            <div class="call-for-bet">
-                 Plaese, make your bet by clicking on chips
-            </div>
-            <svg class="call-for-bet-arrow">
-            <use xlink:href="img/symbol.svg#icon-arrow-bold-down"></use>
-            </svg>
-            `
-      );
-    }
-  }
+  callForBet = document.querySelector(".call-for-bet");
+  callForBetArrow = document.querySelector(".call-for-bet-arrow");
 
   //hides call for bet message and the moving arrow, displays deal button. If all the chips was removed from bet (bet=0) displaying call for bet message and the moving arrow
   betPlaced(bet) {
-    document.querySelector(".call-for-bet").style.display = "none";
-    document.querySelector(".call-for-bet-arrow").style.display = "none";
+    this.callForBet.style.display = "none";
+    this.callForBetArrow.style.display = "none";
     this.dealBtn.style.display = "block";
     if (bet == 0) {
       this.dealBtn.style.display = "none";
-      document.querySelector(".call-for-bet").style.display = "block";
-      document.querySelector(".call-for-bet-arrow").style.display = "block";
+      this.callForBet.style.display = "block";
+      this.callForBetArrow.style.display = "block";
     }
+    // document.querySelector(".call-for-bet").style.display = "none";
+    // document.querySelector(".call-for-bet-arrow").style.display = "none";
+    // this.dealBtn.style.display = "block";
+    // if (bet == 0) {
+    //   this.dealBtn.style.display = "none";
+    //   document.querySelector(".call-for-bet").style.display = "block";
+    //   document.querySelector(".call-for-bet-arrow").style.display = "block";
+    // }
   }
 
   //listen to clicking on deal button and if it was clicked hides it, shows hit and stand buttons. Than calls ontrol.js function

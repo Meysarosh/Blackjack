@@ -91,7 +91,8 @@ bankView.placeBet(generateBet);
 //controlls displaying chips based on bank/remain value
 bankView.showChip(model.remain);
 //gets  bet value from model.js and if its value=0 displays a call for bet message
-gameView.callForBet(model.bet);
+// gameView.callForBet(model.bet);
+gameView.betPlaced(model.bet);
 //listens to clicking on deal button and if it was clicked hides it, shows hit and stand buttons. Than calls startGame function
 gameView.deal(startGame);
 //listens to clicking on hit button and if it was clicked calls nextCardForPlayer function
