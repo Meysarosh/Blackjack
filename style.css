@@ -223,6 +223,7 @@ body {
   grid-column: 9 / 10; }
 
 .bet--info {
+  display: none;
   grid-row: 4 / 5;
   grid-column: 10 / 12; }
 

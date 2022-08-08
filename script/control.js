@@ -59,7 +59,7 @@ const endGame = function () {
   bankView.whoWonTakeBet(comand, model.plusBank());
   //////////////////
   bankView.showChip(model.remain);
-
+  bankView.showBet(model.bet);
   /////////////////////
   gameView.newGame();
 };

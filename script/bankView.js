@@ -105,16 +105,21 @@ class BankView {
 
   //if your bet message exists, owerwrites it with the new value, else inserts message with the bet value
   showBet(bet) {
-    if (document.querySelector(".bet--info")) {
-      document.querySelector(".bet--info").textContent = `Your Bet:${bet}`;
-    } else {
-      this.parentElement.insertAdjacentHTML(
-        "afterbegin",
-        `
-                <div class="bet--info">Your Bet:${bet}</div>
-                `
-      );
+    document.querySelector(".bet--info").textContent = `Your Bet:${bet}`;
+    document.querySelector(".bet--info").style.display = "block";
+    if (bet == 0) {
+      document.querySelector(".bet--info").style.display = "none";
     }
+    // if (document.querySelector(".bet--info")) {
+    //   document.querySelector(".bet--info").textContent = `Your Bet:${bet}`;
+    // } else {
+    //   this.parentElement.insertAdjacentHTML(
+    //     "afterbegin",
+    //     `
+    //             <div class="bet--info">Your Bet:${bet}</div>
+    //             `
+    //   );
+    // }
   }
 
   // if remain is bigger then the chip value, displays the chip in bank,
