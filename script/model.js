@@ -133,5 +133,8 @@ export const plusBank = function () {
   } else if (result() == "player") {
     bank = remain + 2 * bet;
   }
+  bet = 0;
+  remain = bank;
+  console.log(bet, remain, bank);
   return bank;
 };

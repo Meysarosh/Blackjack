@@ -11,7 +11,7 @@ const generateBet = function (value) {
   model.calcBet(value);
   bankView.showBet(model.bet);
   gameView.betPlaced(model.bet);
-  bankView.showChip(model.bank, model.remain);
+  bankView.showChip(model.remain);
 };
 
 //owerwrites bank value due to remain and displays it, drops starter cards, shows scores and if players score is 21 calls dealerGame function
@@ -57,6 +57,10 @@ const endGame = function () {
   gameView.infoWin(comand);
   deckView.cardsBrightness(comand);
   bankView.whoWonTakeBet(comand, model.plusBank());
+  //////////////////
+  bankView.showChip(model.remain);
+
+  /////////////////////
   gameView.newGame();
 };
 
@@ -85,7 +89,7 @@ bankView.displayBank(model.bank);
 //listens to clicking on chips, moves chips and displays bet value than calls generateBet function that controls the bank/remain value and displaying chips in bank
 bankView.placeBet(generateBet);
 //controlls displaying chips based on bank/remain value
-bankView.showChip(model.bank, model.remain);
+bankView.showChip(model.remain);
 //gets  bet value from model.js and if its value=0 displays a call for bet message
 gameView.callForBet(model.bet);
 //listens to clicking on deal button and if it was clicked hides it, shows hit and stand buttons. Than calls startGame function

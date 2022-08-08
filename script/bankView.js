@@ -119,7 +119,7 @@ class BankView {
 
   // if remain is bigger then the chip value, displays the chip in bank,
   //if the chip value bigger then the remain the chip will be hidden
-  showChip(bank, remain) {
+  showChip(remain) {
     document.querySelectorAll(".chip-hidden").forEach((el) => {
       if (parseInt(el.dataset.id) < remain) {
         setTimeout(() => {
@@ -129,7 +129,8 @@ class BankView {
       }
     });
     document.querySelectorAll(".chip-bank").forEach((el) => {
-      if (parseInt(el.dataset.id) > bank || parseInt(el.dataset.id) > remain) {
+      // if (parseInt(el.dataset.id) > bank || parseInt(el.dataset.id) > remain) {
+      if (parseInt(el.dataset.id) > remain) {
         el.style.display = "none";
         el.classList.add("chip-hidden");
       }
