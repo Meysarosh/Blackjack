@@ -23,14 +23,6 @@ class GameView {
       this.callForBet.style.display = "block";
       this.callForBetArrow.style.display = "block";
     }
-    // document.querySelector(".call-for-bet").style.display = "none";
-    // document.querySelector(".call-for-bet-arrow").style.display = "none";
-    // this.dealBtn.style.display = "block";
-    // if (bet == 0) {
-    //   this.dealBtn.style.display = "none";
-    //   document.querySelector(".call-for-bet").style.display = "block";
-    //   document.querySelector(".call-for-bet-arrow").style.display = "block";
-    // }
   }
 
   //listen to clicking on deal button and if it was clicked hides it, shows hit and stand buttons. Than calls ontrol.js function

@@ -55,21 +55,6 @@
   transform: rotateX(45deg);
 }
 
-// .bet .chip--500 {
-//   box-shadow: 0 1rem $yellowd;
-// }
-// .bet .chip--100 {
-//   box-shadow: 0 1rem $black;
-// }
-// .bet .chip--25 {
-//   box-shadow: 0 1rem $redd;
-// }
-// .bet .chip--5 {
-//   box-shadow: 0 1rem $blued;
-// }
-// .bet .chip--1 {
-//   box-shadow: 0 1rem $green;
-// }
 .bet--info {
   z-index: 1;
   font-size: 2rem;
@@ -106,26 +91,7 @@
   color: $yellow;
   box-shadow: -1px 1px 4px $yellow, 1px -1px 4px $yellow;
 }
-// .win {
-//   z-index: 100;
-//   width: 100%;
-//   height: 100%;
-//   font-size: 4.5rem;
-//   text-align: center;
-//   text-shadow: 1px 1px 2px $black;
-//   padding: 0.5rem 1rem;
-//   background-image: linear-gradient(rgba($grey, 0.2), rgba($greenl, 0.2));
-//   border-radius: 1rem;
 
-//   &--player {
-//     color: rgb(0, 255, 0);
-//     box-shadow: -1px 1px 4px rgb(0, 255, 0), 1px -1px 4px rgb(0, 255, 0);
-//   }
-//   &--dealer {
-//     color: $red;
-//     box-shadow: -1px 1px 4px $red, 1px -1px 4px $red;
-//   }
-// }
 .win {
   z-index: 100;
   width: 100%;
@@ -138,15 +104,6 @@
   background-image: linear-gradient($red, $redd);
   border-radius: 1rem;
   box-shadow: -1px 1px 4px $grey, 1px -1px 4px $grey;
-  // &--player {
-  //   visibility: hidden;
-  // }
-  // &--dealer {
-  //   visibility: hidden;
-  // }
-  // &--draw {
-  //   visibility: hidden;
-  // }
 }
 .hidden {
   visibility: hidden;
