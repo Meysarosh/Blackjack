@@ -31,7 +31,7 @@ class DeckView {
                 <div class="card__backside-img"></div>
                 </div>
             </div>
-            </div>
+        </div>
             ${standart
               .map((el) => {
                 return `

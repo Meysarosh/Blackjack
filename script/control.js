@@ -51,6 +51,11 @@ const nextCardForDealer = function () {
   }
 };
 
+const startNewGame = function (comand) {
+  gameView.infoWin(comand);
+  gameView.hideScore();
+  deckView.displayDeck(model.standart);
+};
 //defines who won, display message, change cards brightness, throwing chips to the winner
 const endGame = function () {
   const comand = model.result();
@@ -61,7 +66,8 @@ const endGame = function () {
   bankView.showChip(model.remain);
   bankView.showBet(model.bet);
   /////////////////////
-  gameView.newGame();
+  //new game button + listener + hididng winner message
+  gameView.newGame(comand, startNewGame);
 };
 
 //hides buttons, shows dilers first card, shows scores, if player has less then 21 request next card for dealer

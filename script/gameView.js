@@ -81,6 +81,10 @@ class GameView {
     this.dealerScore.style.display = "block";
     this.dealerScore.innerHTML = dscore;
   }
+  hideScore() {
+    this.playerScore.style.display = "none";
+    this.dealerScore.style.display = "none";
+  }
 
   //displays winner message based on result of game
   infoWin(comand) {
@@ -89,9 +93,15 @@ class GameView {
     if (comand == "draw") this.infoWinDraw.classList.toggle("hidden");
   }
 
-  //display new game button
-  newGame() {
+  //display new game button and listen for click - calls control.js function and forwarding comand to it (who is the previous winner info)
+  newGame(comand, control) {
+    const newGameBtn = this.newGameBtn;
     this.newGameBtn.style.display = "block";
+    this.newGameBtn.addEventListener("click", function (e) {
+      if (!e.target.closest(".new-game")) return;
+      newGameBtn.style.display = "none";
+      control(comand);
+    });
   }
 }
 export default new GameView();

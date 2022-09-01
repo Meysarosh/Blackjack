@@ -18,8 +18,9 @@ const numbers = [
   "A",
 ];
 const symbols = ["hearts", "spades", "diamonds", "clubs"];
-
+//cardsDeck generates only ones 52 card from numbers and symbols instead of hardcoding it
 export const cardsDeck = [];
+//deck is generated from cardsDeck id's, and shrinks every time you pick a card
 export let deck = [];
 export const standart = [
   "player-card--1",
@@ -65,6 +66,7 @@ export const pickCard = function (comand) {
   let card = cardsDeck.filter((card) => card.id == cardname)[0];
   if (comand == "player") playersCards.push(card);
   if (comand == "dealer") dealersCards.push(card);
+  console.log(deck.length);
   return card;
 };
 //first 4 cards of game
